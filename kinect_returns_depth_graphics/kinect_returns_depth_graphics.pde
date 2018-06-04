@@ -29,7 +29,8 @@ void draw() {
  kinect.drawDepthImage(); 
  
  image(kinect.getRawDepthImage(), 640, 0);
-  
+ 
+  kinect.displayDistanceAndAngle();
 }
 
 /*
