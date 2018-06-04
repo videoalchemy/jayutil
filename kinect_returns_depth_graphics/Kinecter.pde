@@ -11,7 +11,7 @@ class Kinecter {
   int minDepth = 60;
   int maxDepth = 2000;
 
-  float kinectAngle;
+  float angle;
 
   int thresholdRange = 2047;
 
@@ -44,6 +44,13 @@ class Kinecter {
     image(kinect.getDepthImage(), 0, 0);
   }
 
+  void configureKinect(){
+   fill(0);
+  text("TILT: " + kinect.angle, 10, 20);
+  text("THRESHOLD: [" + kinect.minDepth + ", " + kinect.maxDepth + "]", 10, 36);
+ 
+    
+  }
   PImage getRawDepthImage() {
     //depthImg.loadPixels();
     int [] rawDepth = kinect.getRawDepth();
