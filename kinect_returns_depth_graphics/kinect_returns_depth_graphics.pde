@@ -19,7 +19,7 @@ import org.openkinect.processing.*;
 Kinecter kinect;
 
 void setup() {
- size(1024, 768, P2D);
+ size(1280, 480, P2D);
  
  kinect = new Kinecter(this);
   
@@ -27,6 +27,8 @@ void setup() {
 
 void draw() {
  kinect.drawDepthImage(); 
+ 
+ image(kinect.getRawDepthImage(), 640, 0);
   
 }
 
