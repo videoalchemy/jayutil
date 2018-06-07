@@ -1,4 +1,12 @@
 /* jstephens  201806
+Utilities used for just about every project
+* Record frame sequences
+* SNAP frames
+* hide cursor
+* Require project info
+* Monitor Key Events
+* Print Instructions to the console
+
 Recorder utility:
   * Saves and labels sequences in timestamped directories. 
   * Allows you to start and stop saveFrame without overwriting previous sequences
@@ -23,10 +31,10 @@ String directoryStartTime = (""); //timestamp to be called only once
 
 ////////////////////////////////////////////////////////////
 ///// GLOBALS REQUIRED BY Recorder class
-String PROJ = "test_frame_location";
-String VERSION = "prototype";
-String SNAP_PATH = ("snaps/");   //("../../../snaps/");
-String FRAME_PATH = ("frames/"); //("../../../frames/");
+String PROJ = "test_frame_location";                           // move these to Utility class
+String VERSION = "prototype";                                  // move these to Utility class
+String SNAP_PATH = ("snaps/");   //("../../../snaps/");        // move these to Utility class
+String FRAME_PATH = ("frames/"); //("../../../frames/");       // move these to Utility class
 
 String SNAP_FOLDER_PATH = ("snaps/");   //("../../../snaps/"); // phase these out
 String FRAME_FOLDER_PATH = ("frames/"); //("../../../frames/"); // phase these out

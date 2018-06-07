@@ -3,12 +3,12 @@
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == UP) {
-      kinect.angle++;
+      //kinect.angle++;            //Because the anlge controls are jacked on my 1414 Kinect
     } else if (keyCode == DOWN) {
-      kinect.angle--;
+      //kinect.angle--;
     }
-    kinect.angle = constrain(kinect.angle, 0, 30);
-    kinect.tiltCam(kinect.angle);
+    //kinect.angle = constrain(kinect.angle, 0, 30);
+    //kinect.tiltCam(kinect.angle);
   } else if (key == 'a') {
     kinect.minDepth = constrain(kinect.minDepth+10, 0, kinect.maxDepth);
   } else if (key == 's') {

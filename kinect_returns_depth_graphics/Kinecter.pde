@@ -1,9 +1,3 @@
-////////////////////////////////////////////////////////////
-//  Kinect setup (constant for all configs)
-////////////////////////////////////////////////////////////
-
-// size of the kinect image
-
 class Kinecter {
   Kinect kinect;
   boolean isKinected = false;
@@ -14,11 +8,9 @@ class Kinecter {
   float angle;
 
   int thresholdRange = 2047;
-
   PImage depthImg;
 
   public Kinecter(PApplet parent) {
-    //super();
     try {
       kinect = new Kinect(parent);
       kinect.initDepth();
