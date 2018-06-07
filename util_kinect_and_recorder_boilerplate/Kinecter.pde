@@ -3,7 +3,7 @@ class Kinecter {
   boolean isKinected = false;
 
   int minDepth = 530; //530: home testing, 60:standard
-  int maxDepth = 2000; // 920: home testing: 2000: stand
+  int maxDepth = 920; // 920: home testing: 2000: stand
 
   float angle;
 
