@@ -17,32 +17,8 @@ void toggleCursor () {
 //////////////////////////////////////////////////
 
 //////////////////////////////////////////////////
-//  TOGGLE RECORDING  =  'r'
-void toggleRecording () {
-  directoryStartTime = frameAsString();
-  recordIsOn = !recordIsOn;
-  println("TOGGLE RECORDING!");
-  println("*** Recording = " + recordIsOn + " ***");
-  println ("directory by StartTime: " + PROJ + "/" + directoryStartTime);
-}
-//  END: TOGGLE RECORDING
-//////////////////////////////////////////////////
-
-//////////////////////////////////////////////////
-//  RECORD FRAMES  =  'r'
-void checkRecordFrame() {
-  if (recordIsOn) {
-    saveFrame(FRAME_FOLDER_PATH + directoryStartTime + "#####.tif");
-  }
-}
-//  END: RECORD FRAMES
-//////////////////////////////////////////////////
-
-//////////////////////////////////////////////////
 //  MAKE PIXELS CLEAR FOR PGRAPHIC  =  'TAB'
 void makePixelsClearAgain(PGraphics p) {
-    println("hidden function?");
-    //background(0);
     p.beginDraw();
     p.clear();
     p.endDraw();
@@ -50,15 +26,13 @@ void makePixelsClearAgain(PGraphics p) {
 //  END: MAKE PIXELS CLEAR
 //////////////////////////////////////////////////
 
-
-
-////////////////////////////////////////
+//////////////////////////////////////////////////
 //   PROVIDE SOME POINTERS
 void printInstructions() {
   println("");
   println("                 Keyboard controls");
     println("          -----------------------------------");
-     println("   ENTER  takes a snapshot and saves it to "+SNAP_FOLDER_PATH);
+     println("   ENTER  takes a snapshot and saves it to "+SNAP_PATH);
      println("   TAB     clears pgraphic background to transparent");
      println("   'r'     toggle screen recording");
      println("   'c'     toggle cursor");
@@ -69,7 +43,4 @@ void printInstructions() {
      println("          -----------------------------------");
      println("");
 }
-
-void mousePressed() {
-  //saveFrameIsOn = !saveFrameIsOn;
-}
+//////////////////////////////////////////////////

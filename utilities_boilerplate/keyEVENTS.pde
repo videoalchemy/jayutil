@@ -1,5 +1,10 @@
 //////////////////////////////
 // KeyEVENTS - flipping switches!
+//   and mouseEvents too
+
+
+void mousePressed() {
+}
 
 ////////////////////////////////////////////////////
 //  KEYCODE FOR EVENTS
@@ -32,13 +37,16 @@ void keyPressed() {
   //  SNAP SCREEN  =  ENTER
   /////////////////////////////////////////////////
   if (currentKeyCode==ENTER) {
-    snapScreen();
+    recorder.snapScreen();
   }
 
   /////////////////////////////////////////////////
   //  CLEAR BACKGROUND = TAB 
   /////////////////////////////////////////////////
   if (currentKeyCode==TAB) {
+    background(0);
+    clear(); // this needs specific pgraphic
+    // or use this utility function which takes a PGraphic argument
     makePixelsClearAgain(makePixelsClear);
   } 
 
@@ -58,18 +66,18 @@ void keyPressed() {
 
   // Handle standard keys as a switch
   switch(currentKey) {
+
   case 'r':
     //////////////////////////////////////////////////
     //  TOGGLE SCREEN RECORDING  =  'r'
-    toggleRecording();
-    //recorder.toggleRecording();
+    //toggleRecording();
+    recorder.toggleRecording();
     break;
 
   case 'c':
     //////////////////////////////////////////////////
     //  TOGGLE CURSOR  =  'c'
     toggleCursor();
-    //recorder.toggleCursor();
     break;
 
   case '-':
@@ -135,31 +143,21 @@ void updateControlsFromKeyboard() {
     println(currentKey);
   } else if (currentKey == 'w') {
     println(currentKey);
-  }
- 
-  else if (currentKey == 'e') {
+  } else if (currentKey == 'e') {
     println(currentKey);
-  } 
-
-  else if (currentKey == 't') {
+  } else if (currentKey == 't') {
     println(currentKey);
   } else if (currentKey == 'y') {
     println(currentKey);
-  }
-
-  else if (currentKey == 'u') {
+  } else if (currentKey == 'u') {
     println(currentKey);
   } else if (currentKey == 'i') {
     println(currentKey);
-  }
-
-  else if (currentKey == 'o') {
+  } else if (currentKey == 'o') {
     println(currentKey);
   } else if (currentKey == 'p') {
     println(currentKey);
-  }
-
-  else if (currentKey == '[') {
+  } else if (currentKey == '[') {
     println(currentKey);
   } else if (currentKey == ']') {
     println(currentKey);
