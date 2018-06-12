@@ -10,16 +10,18 @@
  *    of files in a directory and all subdirectories (using recursion) 
  */
 
+import java.util.Date;
 
 void setup() {
 
-  // Path
-  String path = sketchPath;
+  // Using just the path of this sketch to demonstrate,
+  // but you can list any directory you like.
+  String path = sketchPath();
 
   println("Listing all filenames in a directory: ");
   String[] filenames = listFileNames(path);
   println(filenames);
-  
+
   println("\nListing info about all files in a directory: ");
   File[] files = listFiles(path);
   for (int i = 0; i < files.length; i++) {
@@ -31,10 +33,10 @@ void setup() {
     println("Last Modified: " + lastModified);
     println("-----------------------");
   }
-  
+
   println("\nListing info about all files in a directory and all subdirectories: ");
   ArrayList allFiles = listFilesRecursive(path);
-  
+
   for (int i = 0; i < allFiles.size(); i++) {
     File f = (File) allFiles.get(i);    
     println("Name: " + f.getName());
@@ -52,7 +54,6 @@ void setup() {
 // Nothing is drawn in this program and the draw() doesn't loop because
 // of the noLoop() in setup()
 void draw() {
-
 }
 
 
@@ -83,9 +84,9 @@ File[] listFiles(String dir) {
 
 // Function to get a list ofall files in a directory and all subdirectories
 ArrayList listFilesRecursive(String dir) {
-   ArrayList fileList = new ArrayList(); 
-   recurseDir(fileList,dir);
-   return fileList;
+  ArrayList fileList = new ArrayList(); 
+  recurseDir(fileList, dir);
+  return fileList;
 }
 
 // Recursive function to traverse subdirectories
@@ -97,7 +98,7 @@ void recurseDir(ArrayList a, String dir) {
     File[] subfiles = file.listFiles();
     for (int i = 0; i < subfiles.length; i++) {
       // Call this function on all files in this directory
-      recurseDir(a,subfiles[i].getAbsolutePath());
+      recurseDir(a, subfiles[i].getAbsolutePath());
     }
   } else {
     a.add(file);
